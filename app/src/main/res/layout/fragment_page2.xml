@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".1"
+            android:orientation="horizontal"
+
+            android:weightSum="1">
+
+
+            <EditText
+                android:id="@+id/edt_itmname"
+                android:layout_width="01dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:hint="@string/enter_itemname"
+                android:maxLines="1"
+                android:textColor="@color/black" />
+
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat_subrayada"
+                android:text="Show" />
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recv"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_margin="10dp"
+            android:layout_weight=".9"
+
+
+            android:padding="14dp"
+
+
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".3"
+
+            >
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

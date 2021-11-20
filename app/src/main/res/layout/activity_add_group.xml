@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp0"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/sub_category1"
+                android:textStyle="bold" />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp1"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                  android:visibility="gone"
+                   app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                   />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/sub_category2"
+                android:textStyle="bold" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/company"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp3"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+            <ProgressBar
+                android:id="@+id/prg3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/brand"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp4"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt5"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/pattern"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp5"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt6"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/color"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp6"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg6"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txt7"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/size"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".65">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp7"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="@drawable/shape_btn_swipe" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/prg7"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+
+
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:text="@string/save"
+            android:fontFamily="@font/montserrat"/>
+
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

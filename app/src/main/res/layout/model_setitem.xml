@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="250dp"
+   android:layout_margin="10dp"
+    android:focusableInTouchMode="true"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:weightSum="1"
+
+        android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".15"
+            android:orientation="horizontal"
+            android:background="@color/bg_screen5_dark"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txtname"
+                android:layout_width="0dip"
+                android:layout_weight=".9"
+                android:layout_height="match_parent"
+android:textSize="10sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+
+            />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_images"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:orientation="horizontal"
+            android:layout_weight=".85"/>
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

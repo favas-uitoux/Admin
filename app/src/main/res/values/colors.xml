@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="pale_ash">#F8F8F8</color>
+    <color name="color1">#F00</color>
+    <color name="color2">#FFFFFF</color>
+    <color name="color3">#2291d2</color>
+    <color name="color4">#000000</color>
+    <color name="light_blue">#D2E9F6</color>
+    <color name="black">#000000</color>
+    <color name="colorgreen">#B9CE0D</color>
+    <color name="coloryellow">#FFFF00</color>
+    <color name="orange">#fc8a6a</color>
+    <color name="ash">#909090</color>
+    <color name="lightash">#ced4da</color>
+    <color name="blue_dark">#0F065C</color>
+    <!--<color name="colorPrimary">#12679e</color>
+   <color name="colorPrimaryDark">#303F9F</color>
+   <color name="colorAccent">#ff5500</color>-->
+    <color name="text_color_grey">#263238</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <color name="colorPrimary">#0277BD</color>
+    <!--<color name="colorPrimary">#4F6BF0</color>-->
+    <!--<color name="colorPrimary">#1976D2</color>-->
+    <color name="file_ext_bg">#efefef</color>
+
+    <!--<color name="colorPrimary">#0D47A1</color>-->
+    <!--<color name="colorPrimaryDark">#2E3B84</color>-->
+    <color name="colorPrimaryDark">#01579B</color>
+    <!--<color name="colorPrimaryDark">#3E55BF</color>-->
+    <color name="colorAccent">#D82460</color>
+    <!--<color name="colorAccent">#fd4933</color>-->
+    <color name="transparent">#00000000</color>
+    <color name="dividerDark">#e2e2e2</color>
+    <color name="semiTransWhite">#dfffffff</color>
+    <color name="blue_gray">#455A64</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0D47A1</color>
+    <color name="gray">#BDBDBD</color>
+    <color name="cardViewOuterColor">#eeeeee</color>
+    <color name="buttonBgColour">#3acaff</color>
+    <color name="indigo">#1a237e</color>
+    <color name="calanderGreen">#99ba202a</color>
+    <color name="green">#05c602</color>
+    <color name="leaf_green">#027a24</color>
+    <color name="icon_gray">#757575</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#3F51B5</color>
+    <color name="bg_screen2">#008080</color>
+    <color name="bg_screen3">#e53627</color>
+    <color name="bg_screen4">#ba4ace</color>
+    <color name="bg_screen5">#087fe0</color>
+    <color name="bg_screen6">#459e49</color>
+    <color name="bg_screen7">#D87102</color>
+    <color name="bg_screen8">#d80452</color>
+
+    <color name="bg_screen2_dark">#106666</color>
+    <color name="bg_screen4_dark">#641971</color>
+    <color name="bg_screen5_dark">#15609B</color>
+    <color name="bg_screen6_dark">#2f7733</color>
+    <color name="bg_screen7_dark">#9E5302</color>
+    <color name="bg_screen8_dark">#bc0347</color>
+
+
+    <color name="colorBottomNav">#018786</color>
+    <color name="colorBottomNavItemChecked">#ffffff</color>
+    <color name="colorBottomNavItemUnchecked">#4dffffff</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <!-- dots inactive colors -->
+
+    <!-- dots active colors -->
+
+    <color name="yellow">#e8c100</color>
+    <color name="gold">#FFD700</color>
+    <color name="light_gray">#BDBDBD</color>
+    <color name="red">#D33F49</color>
+    <color name="blood_primary_color">#D33F49</color>
+    <color name="blood_primary_dark">#9A2E36</color>
+    <color name="blood_color_accent">#212121</color>
+    <color name="background">#FAFAFA</color>
+
+    <color name="text_dark_grey">#212121</color>
+    <color name="text_medium_grey">#424242</color>
+
+    <color name="light_red">#E57373</color>
+    <color name="text_gray">#6E6A6A</color>
+    <color name="text_black">#000000</color>
+    <color name="yellowish_white">#FFFFCC</color>
+
+    <color name="form_icon_color">#757575</color>
+    <color name="separator_color">#ededed</color>
+
+    <!--IMMUNITY MODULE -->
+
+    <color name="chart_grid">#dbdbdb</color>
+
+    <color name="light_pink">#F8BBD0</color>
+
+    <color name="blue_shade1">#caf0f8</color>
+
+</resources>
+
+
+
