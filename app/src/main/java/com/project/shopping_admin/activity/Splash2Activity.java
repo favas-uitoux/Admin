@@ -279,7 +279,8 @@ public class Splash2Activity extends BaseActivity implements TypeWriterListener 
 
     private void goto_next_screen() {
 
-            Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+          //  Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent in = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(in);
             finish();
 
