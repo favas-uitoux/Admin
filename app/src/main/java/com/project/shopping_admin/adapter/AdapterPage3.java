@@ -30,17 +30,11 @@ public class AdapterPage3 extends RecyclerView.Adapter<AdapterPage3.ViewHolderCl
     Context context;
 
 
-  //  TextView txtstkid;
+    //  TextView txtstkid;
 
 
-    AdapterPage3Sub    adp;
+    AdapterPage3Sub adp;
     List<model_img_and_stkid> list3;
-
-
-
-
-
-
 
 
     public AdapterPage3(Context context, List<DetailsItem> list) {
@@ -66,27 +60,20 @@ public class AdapterPage3 extends RecyclerView.Adapter<AdapterPage3.ViewHolderCl
     public void onBindViewHolder(@NonNull ViewHolderClass holder, int position) {
 
 
-
-
-        list3=new ArrayList<>();
+        list3 = new ArrayList<>();
         final DetailsItem cpr = list.get(position);
 
         holder.txtname.setText(cpr.getItemname());
 
-holder.btnadd.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
+        holder.btnadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
-
-
+                Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 
 
-    }
-});
-
-
-
+            }
+        });
 
 
         String fnames = cpr.getFname();
@@ -100,26 +87,21 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 
 
                 for (String fname : parts) {
-                  //  list2.add(fname);
-                    list3.add(new model_img_and_stkid(fname,cpr.getStkidFromServer()));
+                    //  list2.add(fname);
+                    list3.add(new model_img_and_stkid(fname, cpr.getStkidFromServer()));
                 }
 
 
             } else {
-            //    list2.add(fnames);
-                list3.add(new model_img_and_stkid(fnames,cpr.getStkidFromServer()));
+                //    list2.add(fnames);
+                list3.add(new model_img_and_stkid(fnames, cpr.getStkidFromServer()));
             }
 
 
         }
 
 
-
-
-
-
-     adp = new AdapterPage3Sub(context,list3);
-
+        adp = new AdapterPage3Sub(context, list3);
 
 
         LinearLayoutManager lm = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
@@ -130,28 +112,6 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
         holder.rcv_images.setAdapter(adp);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -160,9 +120,9 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
     }
 
     @Override
-    public void refresh_adapter(String image,String stockid) {
-      //  list3.remove(new model_img_and_stkid(image,stockid));
-      adp.notifyDataSetChanged();
+    public void refresh_adapter(String image, String stockid) {
+        //  list3.remove(new model_img_and_stkid(image,stockid));
+        adp.notifyDataSetChanged();
 
 //        int pos=0;
 //        for (model_img_and_stkid row: list3)
@@ -178,19 +138,14 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 //
 //        }
 
-        int len=list.size();
-        for(int j=0;j<len;j++)
-        {
-            DetailsItem main_row=  list.get(j);
+        int len = list.size();
+        for (int j = 0; j < len; j++) {
+            DetailsItem main_row = list.get(j);
 
 
+            List<model_img_and_stkid> list3_copy = new ArrayList<>();
 
-
-            List<model_img_and_stkid> list3_copy=new ArrayList<>();
-
-            String fnames_copy=    main_row.getFname();
-
-
+            String fnames_copy = main_row.getFname();
 
 
             if (!fnames_copy.equals("")) {
@@ -202,12 +157,11 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 
                     for (String fname : parts) {
                         //  list2.add(fname);
-                    //    list3.add(new model_img_and_stkid(fname,cpr.getStkidFromServer()));
+                        //    list3.add(new model_img_and_stkid(fname,cpr.getStkidFromServer()));
 
 
-                        if(!fname.equals(image))
-                        {
-                            list3_copy.add(new model_img_and_stkid(fname,main_row.getStkidFromServer()) );
+                        if (!fname.equals(image)) {
+                            list3_copy.add(new model_img_and_stkid(fname, main_row.getStkidFromServer()));
                         }
 
 
@@ -216,19 +170,15 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 
                 } else {
 
-                    if(!fnames_copy.equals(image))
-                    {
-                        list3_copy.add(new model_img_and_stkid(fnames_copy,main_row.getStkidFromServer()) );
+                    if (!fnames_copy.equals(image)) {
+                        list3_copy.add(new model_img_and_stkid(fnames_copy, main_row.getStkidFromServer()));
                     }
-
 
 
                 }
 
 
             }
-
-
 
 
         }
@@ -239,30 +189,26 @@ Constants.getFrag3Interface().show_dialog(cpr.getStkidFromServer());
 
     public class ViewHolderClass extends RecyclerView.ViewHolder {
 
-     //   List<model_img_and_stkid> list3;
+        //   List<model_img_and_stkid> list3;
         TextView txtname;
         ImageView btnadd;
 
         RecyclerView rcv_images;
-      //  AdapterPage2Sub    adp;
-
+        //  AdapterPage2Sub    adp;
 
 
         public ViewHolderClass(@NonNull View itemView) {
             super(itemView);
 
 
-
             txtname = itemView.findViewById(R.id.txtname);
-            rcv_images=itemView.findViewById(R.id.rcv_images);
-           // txtstkid=itemView.findViewById(R.id.txtstkid);
-             btnadd=itemView.findViewById(R.id.btnadd);
+            rcv_images = itemView.findViewById(R.id.rcv_images);
+            // txtstkid=itemView.findViewById(R.id.txtstkid);
+            btnadd = itemView.findViewById(R.id.btnadd);
 
 
         }
     }
-
-
 
 
 }

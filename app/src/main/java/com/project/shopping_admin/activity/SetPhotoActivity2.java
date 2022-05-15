@@ -5,19 +5,23 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.project.shopping_admin.BuildConfig;
 import com.project.shopping_admin.Constants;
 import com.project.shopping_admin.R;
 import com.project.shopping_admin.activity.base.BaseActivity;
@@ -34,8 +38,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import timber.log.Timber;
+
+import static com.project.shopping_admin.Constants.TAKE_PIC;
 
 public class SetPhotoActivity2 extends BaseActivity {
 
@@ -181,12 +188,39 @@ public class SetPhotoActivity2 extends BaseActivity {
 
 
             }
+            else if(requestCode==TAKE_PIC   && resultCode == RESULT_OK )
+            {
+                try {
+                    File photofile=new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),"100.jpg");
+
+                    Uri furi=       FileProvider.getUriForFile(Objects.requireNonNull(this),
+                            BuildConfig.APPLICATION_ID + ".provider", photofile);
+
+                    if(furi !=null)
+                    {
+                       // Uri res = CropImage.getPickImageResultUri(this, data);
+
+                        startcrop(furi);
+                    }
+
+                    Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_LONG).show();
+
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(getApplicationContext(),"not ",Toast.LENGTH_LONG).show();
+                }
+
+
+
+            }
         } catch (Exception e) {
 
         }
 
 
     }
+
 
 
 }

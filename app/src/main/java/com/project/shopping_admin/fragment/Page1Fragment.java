@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.project.shopping_admin.BuildConfig;
 import com.project.shopping_admin.Constants;
 import com.project.shopping_admin.R;
 import com.project.shopping_admin.activity.SetPhotoActivity2;
@@ -54,6 +57,7 @@ import retrofit2.Callback;
 import timber.log.Timber;
 
 import static android.app.Activity.RESULT_OK;
+import static com.project.shopping_admin.Constants.TAKE_PIC;
 
 
 /* Fragment used as page 1 */
@@ -148,6 +152,25 @@ public class Page1Fragment extends Fragment implements Frag1Interface {
 
             }
         });
+
+        iv1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent takepicIntent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                takepicIntent.resolveActivity(getActivity().getPackageManager());
+                File photofile= new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES),"100.jpg");
+                // Uri furi=  FileProvider.getUriForFile(getActivity(),getActivity().getPackageName()+".file_provider_paths",photofile);
+                Uri furi=       FileProvider.getUriForFile(Objects.requireNonNull(getActivity()),
+                        BuildConfig.APPLICATION_ID + ".provider", photofile);
+
+
+                takepicIntent.putExtra(MediaStore.EXTRA_OUTPUT,furi);
+                getActivity().startActivityForResult(takepicIntent,TAKE_PIC);
+
+                return true;
+            }
+        });
+
 
 
         return rootView;

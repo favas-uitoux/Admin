@@ -12,6 +12,7 @@ import com.project.shopping_admin.interfaces.SetItemsFragmentInterface;
 
 public class Constants {
 
+    public static final int TAKE_PIC = 300;
 
     public static String Buy_Qty_Free_Qty="Buy Qty Free Qty";
     public static String Buy_Qty_Free_Percent="Buy Qty Free Percent";

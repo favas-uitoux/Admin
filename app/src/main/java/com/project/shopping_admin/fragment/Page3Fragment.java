@@ -1,8 +1,14 @@
 package com.project.shopping_admin.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +18,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.project.shopping_admin.BuildConfig;
 import com.project.shopping_admin.Constants;
 
 import com.project.shopping_admin.R;
@@ -32,6 +41,8 @@ import com.project.shopping_admin.interfaces.Frag3Interface;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -43,8 +54,10 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
+import static android.app.Activity.RESULT_OK;
 import static com.project.shopping_admin.Constants.SelectMainCategory;
 import static com.project.shopping_admin.Constants.SelectSubCategory;
+import static com.project.shopping_admin.Constants.TAKE_PIC;
 
 
 /* Fragment used as page 2 */
@@ -436,6 +449,7 @@ public class Page3Fragment extends DialogFragment implements Frag3Interface {
 
 
         img1.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
 
@@ -443,16 +457,18 @@ public class Page3Fragment extends DialogFragment implements Frag3Interface {
                 if (!txt1.getText().toString().equals("")) {
 
                     try {
-
                         Random randomGenerator = new Random();
 
                         int randomInt = randomGenerator.nextInt(100000);
 
                         Constants.setRandom_no("img" + randomInt);
 
+
+
+
                         CropImage.startPickImageActivity(Objects.requireNonNull(getActivity()));
                     } catch (Exception e) {
-                        Toast.makeText(getActivity(), "aaaa", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "error", Toast.LENGTH_LONG).show();
                     }
                 } else {
 
@@ -461,6 +477,24 @@ public class Page3Fragment extends DialogFragment implements Frag3Interface {
                 }
 
 
+            }
+        });
+
+        img1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                                        Intent takepicIntent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        takepicIntent.resolveActivity(getActivity().getPackageManager());
+                        File photofile= new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES),"100.jpg");
+                     // Uri furi=  FileProvider.getUriForFile(getActivity(),getActivity().getPackageName()+".file_provider_paths",photofile);
+                        Uri furi=       FileProvider.getUriForFile(Objects.requireNonNull(getActivity()),
+                                BuildConfig.APPLICATION_ID + ".provider", photofile);
+
+
+                        takepicIntent.putExtra(MediaStore.EXTRA_OUTPUT,furi);
+                        getActivity().startActivityForResult(takepicIntent,TAKE_PIC);
+
+                return true;
             }
         });
 
@@ -477,6 +511,46 @@ public class Page3Fragment extends DialogFragment implements Frag3Interface {
 
 
     }
+
+//    protected void dispatchTakePictureIntent() {
+//
+//        // Check if there is a camera.
+//        Context context = getActivity();
+//        PackageManager packageManager = context.getPackageManager();
+//        if(packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA) == false){
+//            Toast.makeText(getActivity(), "This device does not have a camera.", Toast.LENGTH_SHORT)
+//                    .show();
+//            return;
+//        }
+//
+//        // Camera exists? Then proceed...
+//        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//        // Ensure that there's a camera activity to handle the intent
+//        SetPhotoActivity2 activity = (SetPhotoActivity2)getActivity();
+//        if (takePictureIntent.resolveActivity(activity.getPackageManager()) != null) {
+//            // Create the File where the photo should go.
+//            // If you don't do this, you may get a crash in some devices.
+//            File photoFile = null;
+//            try {
+//                photoFile = createImageFile();
+//            } catch (IOException ex) {
+//                // Error occurred while creating the File
+//                Toast toast = Toast.makeText(activity, "There was a problem saving the photo...", Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//            // Continue only if the File was successfully created
+//            if (photoFile != null) {
+//                Uri fileUri = Uri.fromFile(photoFile);
+//            //    activity.setCapturedImageURI(fileUri);
+//             //   activity.setCurrentPhotoPath(fileUri.getPath());
+////                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+////                        activity.getCapturedImageURI());
+//                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+//            }
+//        }
+//    }
+
 
     @Override
     public void setImageView(Uri res) {

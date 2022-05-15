@@ -170,11 +170,12 @@ public class Splash2Activity extends BaseActivity implements TypeWriterListener 
     public void onTypingEnd(String text) {
 
 
-        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) + ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) + ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) + ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             showSnack_W("app does not have permission now");
 
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    Splash2Activity.this, Manifest.permission.CAMERA) || ActivityCompat.shouldShowRequestPermissionRationale(
                     Splash2Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) || ActivityCompat.shouldShowRequestPermissionRationale(
                     Splash2Activity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
@@ -224,7 +225,7 @@ public class Splash2Activity extends BaseActivity implements TypeWriterListener 
                         Splash2Activity.this,
                         new String[]{
 
-
+                                Manifest.permission.CAMERA,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
 
                                 Manifest.permission.READ_EXTERNAL_STORAGE

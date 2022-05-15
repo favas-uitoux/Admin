@@ -2,8 +2,11 @@ package com.project.shopping_admin.fragment;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.project.shopping_admin.BuildConfig;
 import com.project.shopping_admin.Constants;
 import com.project.shopping_admin.R;
 import com.project.shopping_admin.Utils;
@@ -41,6 +46,8 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
+
+import static com.project.shopping_admin.Constants.TAKE_PIC;
 
 
 /* Fragment used as page 2 */
@@ -251,6 +258,23 @@ public class Page2Fragment extends Fragment implements Frag2Interface {
             }
         });
 
+        img1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent takepicIntent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                takepicIntent.resolveActivity(getActivity().getPackageManager());
+                File photofile= new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES),"100.jpg");
+                // Uri furi=  FileProvider.getUriForFile(getActivity(),getActivity().getPackageName()+".file_provider_paths",photofile);
+                Uri furi=       FileProvider.getUriForFile(Objects.requireNonNull(getActivity()),
+                        BuildConfig.APPLICATION_ID + ".provider", photofile);
+
+
+                takepicIntent.putExtra(MediaStore.EXTRA_OUTPUT,furi);
+                getActivity().startActivityForResult(takepicIntent,TAKE_PIC);
+
+                return true;
+            }
+        });
 
 
 

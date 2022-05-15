@@ -1357,7 +1357,7 @@ public class AddGroupActivity extends BaseActivity {
                     val6=sp6.getSelectedItem().toString();
                 }
 
-                if(list_sp7.size()>0   &&  !sp6.getSelectedItem().toString().equals(Constants.Choose_Size) )
+                if(list_sp7.size()>0   &&  !sp7.getSelectedItem().toString().equals(Constants.Choose_Size) )
                 {
                     val7=sp7.getSelectedItem().toString();
                 }
